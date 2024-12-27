@@ -25,38 +25,38 @@ h1, h2, h3 {
 .banner {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-/* Button styles */
+/* Buttons */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .section-button {
     background-color: black;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Larger buttons */
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
+    font-size: 18px; /* Larger text */
     cursor: pointer;
+    text-decoration: none;
 }
 
 .section-button:hover {
-    background-color: #444;
+    background-color: #444; /* Darker black on hover */
 }
 
-/* Section styling */
+/* Section Styling */
 section {
     padding: 20px;
     margin: 20px 0;
 }
 
-/* Team and Trophy Lists */
 .team-info, .trophies, .external-links {
     list-style-type: none;
     padding: 0;
@@ -66,7 +66,7 @@ section {
     margin: 10px 0;
 }
 
-/* Divider (horizontal line) */
+/* Divider */
 .divider {
     border: 0;
     border-top: 2px solid black;
@@ -90,7 +90,7 @@ section {
 
     .section-button {
         font-size: 16px;
-        padding: 8px 16px;
+        padding: 10px 20px;
     }
 }
 
