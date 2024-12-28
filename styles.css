@@ -78,21 +78,86 @@ h2.section-title, h3 {
     padding-bottom: 5px; /* Bring the line closer to the text */
 }
 
-/* Add a custom underline effect with more styling */
-.section-title::after {
-    content: ''; /* Empty content to create the line */
+/* Translucent Panel Behind Hamburger Icon */
+.hamburger-panel {
     position: absolute;
-    left: 0; /* Start the line from the left side of the section title */
-    bottom: 0; /* Align the line to the bottom of the title */
-    width: 50%; /* Adjust the width of the line */
-    height: 3px; /* Line thickness */
-    background-color: #444; /* Dark color for the line */
-    border-radius: 2px; /* Rounded corners on the line */
-    transition: width 0.3s ease-in-out; /* Smooth animation */
+    top: 20px;
+    left: 20px; /* Align to the left side */
+    width: 50px; /* Width of the translucent background */
+    height: 40px; /* Height of the translucent background */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    border-radius: 8px; /* Optional: rounded corners */
+    z-index: 500; /* Behind the hamburger icon */
 }
 
-/* Optional: Hover effect to change the line on hover */
-.section-title:hover::after {
-    width: 100%; /* The line expands to full width on hover */
-    background-color: #f4a261; /* Change color on hover */
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    left: 30px; /* Align to the left side */
+    cursor: pointer;
+    z-index: 1000; /* On top of the translucent panel */
+}
+
+.hamburger-menu .line {
+    width: 30px;
+    height: 4px;
+    background-color: white; /* White lines */
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px; /* Space from the top */
+    left: 20px; /* Align dropdown menu to the left */
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: white; /*this changes the colour of the text in the dropdown menu */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4a261; /* Hover color */
+}
+
+/* Show the dropdown when active */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Optionally: Animate the hamburger lines into an "X" when clicked */
+.hamburger-menu.open .line:nth-child(1) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 10px;
+}
+
+.hamburger-menu.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .line:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    top: -10px;
 }

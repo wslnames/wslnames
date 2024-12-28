@@ -16,15 +16,44 @@
     <title>Arsenal - Women's Super League</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/images/wslnames_logo.png" type="image/png">
+    <link rel="icon" href="../images/wslnames_logo.png" type="image/png">
 
     <!-- Google Font: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../styles.css">
+
+    <!-- Add your custom script for hamburger menu -->
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("menu-dropdown");
+        menu.classList.toggle("show");
+      }
+    </script>
 </head>
 <body>
+    <!-- Translucent Panel for Hamburger Menu (Behind the Menu Icon) -->
+    <div class="hamburger-panel"></div>
+
+    <!-- Hamburger Menu Icon (Positioned Left) -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div id="menu-dropdown" class="dropdown-menu">
+        <ul>
+            <li><a href="https://wslnames.github.io/wslnames/index.html">Home</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/wsl">WSL</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/uwcl">UWCL</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/internationalteams">International Teams</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/olympics2024">Olympics 2024</a></li>
+        </ul>
+    </div>
+
     <!-- Banner Section -->
     <header>
         <img src="../images/arsenal_banner.png" alt="Emirates Stadium" class="banner">
