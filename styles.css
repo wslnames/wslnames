@@ -1,11 +1,11 @@
 body {
-    font-family: 'Oswald', sans-serif; /* Apply Oswald font */
+    font-family: 'Poppin', sans-serif; /* Apply Oswald font */
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, p, li {
-    font-family: 'Oswald', sans-serif; /* Apply to headers, paragraphs, and list items */
+    font-family: 'Poppin', sans-serif; /* Apply to headers, paragraphs, and list items */
 }
 .section-button {
     background-color: black; /* Black background */
@@ -16,8 +16,8 @@ h1, h2, h3, p, li {
     font-size: 18px;
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Oswald', sans-serif; /* Apply Oswald to buttons */
-    text-transform: uppercase; /* Optional: Make text uppercase */
+    font-family: 'Poppin', sans-serif; /* Apply Oswald to buttons */
+    
 }
 
 .section-button:hover {
