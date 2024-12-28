@@ -35,3 +35,26 @@ h2 {
 p, li {
     font-weight: 400; /* Regular for body text */
 }
+/* Container for logos */
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+    gap: 3px 3px; /* 5px gap between rows, 10px gap between columns */
+    justify-items: center; /* Center logos horizontally */
+}
+
+/* Style for each logo */
+.logo {
+    max-width: 190px; /* Larger logo size */
+    height: auto;
+}
+
+/* Optional: Make sure the logos don't overlap or stretch */
+.logo-container a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+
