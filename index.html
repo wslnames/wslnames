@@ -14,53 +14,59 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/wslnames_logo.png">
-    <title>Your Page Title</title>
-  
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WSL Names</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/wslnames_logo.png" type="image/png">
+
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
     <style>
         body {
-            font-family: 'Avenir', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         .banner {
             background-color: white;
             padding: 20px 10px;
-            border-bottom: 2px solid black;
+            padding-left: 20px; /* Align title and tagline with the image */
         }
 
         .banner h1 {
             margin: 0;
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 3rem; /* Increased size for larger title */
+            font-weight: 600;
             color: black;
         }
 
         .banner p {
             margin: 5px 0 0 0;
             font-size: 1rem;
+            font-weight: 400;
             color: black;
         }
 
         .buttons {
             margin: 20px 0;
+            padding-left: 20px; /* Align with the image */
+            display: flex; /* Use flexbox to arrange the buttons in a line */
+            flex-wrap: wrap; /* Allow buttons to wrap if necessary on small screens */
+            gap: 10px; /* Add space between buttons */
         }
 
         .buttons a {
-            display: inline-block;
             text-decoration: none;
             background-color: black;
             color: white;
             padding: 10px 20px;
-            margin: 5px;
-            border-radius: 4px;
             font-size: 1rem;
+            font-weight: 500;
         }
 
         .buttons a:hover {
@@ -69,12 +75,39 @@
 
         .image {
             margin-top: 20px;
+            text-align: left; /* Align image to the left */
+            padding-left: 20px; /* Same as the buttons to align both */
+            overflow: hidden; /* Hide any content overflowing from the image container */
         }
 
         .image img {
             max-width: 100%;
             height: auto;
+            object-fit: cover; /* Cover the container area */
+            object-position: left center; /* Position the image to the left */
+            margin: 0; /* No margin to ensure tight left alignment */
         }
+
+        /* Ensure button and title consistency from the second HTML file */
+        .section-button {
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            transition: background-color 0.3s;
+        }
+
+        .section-button:hover {
+            background-color: gray;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
     </style>
 </head>
 <body>
