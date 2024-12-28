@@ -26,11 +26,13 @@ h1, h2, h3 {
     margin-top: 40px;
 }
 
-/* Banner Image */
+
+
 .banner {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 100%;           /* Make the banner span the full width */
+    max-height: 400px;     /* Limit the maximum height */
+    object-fit: cover;     /* Ensure the image scales proportionally and crops if needed */
+    display: block;        /* Center align if needed with margin */
 }
 
 /* Buttons */
