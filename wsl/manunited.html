@@ -22,7 +22,35 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../styles.css">
+<!-- Add your custom script for hamburger menu -->
+<script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu-dropdown");
+      menu.classList.toggle("show");
+    }
+  </script>
+</head>
+<body>
+  <!-- Translucent Panel for Hamburger Menu (Behind the Menu Icon) -->
+  <div class="hamburger-panel"></div>
 
+  <!-- Hamburger Menu Icon (Positioned Left) -->
+  <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div id="menu-dropdown" class="dropdown-menu">
+      <ul>
+          <li><a href="https://wslnames.github.io/wslnames/index.html">Home</a></li>
+          <li><a href="https://wslnames.github.io/wslnames/wsl">WSL</a></li>
+          <li><a href="https://wslnames.github.io/wslnames/uwcl">UWCL</a></li>
+          <li><a href="https://wslnames.github.io/wslnames/internationalteams">International Teams</a></li>
+          <li><a href="https://wslnames.github.io/wslnames/olympics2024">Olympics 2024</a></li>
+      </ul>
+  </div>
     <!-- Custom script for hamburger menu -->
     <script>
         function toggleMenu() {
