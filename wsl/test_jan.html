@@ -27,6 +27,13 @@
             <area shape="rect" coords="4,89,193,107" href="https://www.chelsea.com" alt="Another Example Link" target="_blank">
         </map>
     </div>
+    <script>
+        // Toggle function to show/hide the expanded image view
+        function toggleImage(imageId) {
+            const expandedImage = document.getElementById(imageId);
+            expandedImage.classList.toggle('hidden');  // Toggle visibility of expanded image
+        }
+    </script>
     <div class="image-container">
         <img src="../images/cassetteleicester.png" alt="Click to expand" class="clickable" onclick="toggleImage()">
         <img src="../images/paper_test2.jpg" usemap="#image-map" alt="Expanded view" id="expandedImage" class="hidden clickable">

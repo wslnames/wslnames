@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map with Hyperlinks</title>
+    <style>
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            justify-items: center;
+            margin: 1rem;
+        }
+
+        .clickable {
+            cursor: pointer;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+    
+        
+        .expanded-image-container {
+            display: none;
+            position: absolute;
+            left: 0%;
+            top: -0%;
+            transform: translateY(40%);
+            
+            z-index: 100;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .expanded-image-container.active {
+            display: block;
+        }
+
+        .expanded-image-container img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+        }
+
+        .image-item {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="../images/casettearsenal.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedarsenal')">
+            <div id="expandedarsenal" class="expanded-image-container">
+                <img src="../images/paper_test2.jpg" usemap="#image-map1" alt="Expanded view">
+                <map name="image-map1">
+                    <area shape="rect" coords="4,60,188,76" href="https://www.arsenal.com" alt="Arsenal" target="_blank">
+                    <area shape="rect" coords="4,89,193,107" href="https://www.arsenal-women-supporters-club,com" alt="Chelsea" target="_blank">
+                </map>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../images/cassetteeverton.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedeverton')">
+            <div id="expandedeverton" class="expanded-image-container">
+                <img src="../images/paper_everton.jpg" usemap="#image-map2" alt="Expanded view">
+                <map name="image-map2">
+                    <area shape="rect" coords="4,60,188,76" href="https://www.evertoncity.com" alt="Leicester City" target="_blank">
+                    <area shape="rect" coords="4,89,193,107" href="https://www.google.com" alt="Chelsea" target="_blank">
+                </map>
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/cassetteleicester.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedleicester')">
+            <div id="expandedleicester" class="expanded-image-container">
+                <img src="../images/paper_test2.jpg" usemap="#image-map2" alt="Expanded view">
+                <map name="image-map2">
+                    <area shape="rect" coords="4,60,188,76" href="https://www.leicestercity.com" alt="Leicester City" target="_blank">
+                    <area shape="rect" coords="4,89,193,107" href="https://www.google.com" alt="Chelsea" target="_blank">
+                </map>
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/cassettechelsea.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedchelsea')">
+            <div id="expandedchelsea" class="expanded-image-container">
+                <img src="../images/paper_test2.jpg" usemap="#image-map3" alt="Expanded view">
+                <map name="image-map3">
+                    <area shape="rect" coords="4,60,188,76" href="https://www.chelsea.com" alt="Chelsea" target="_blank">
+                    <area shape="rect" coords="4,89,193,107" href="https://www.boots.com" alt="Leicester City" target="_blank">
+                </map>
+            </div>
+        </div>
+
+        <div class="image-item">
+            <img src="../images/cassettespurs.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedspurs')">
+            <div id="expandedspurs" class="expanded-image-container">
+                <img src="../images/paper_test2.jpg" usemap="#image-map4" alt="Expanded view">
+                <map name="image-map4">
+                    <area shape="rect" coords="4,60,188,76" href="https://www.spurs.com" alt="Spurs" target="_blank">
+                    <area shape="rect" coords="4,89,193,107" href="https://www.liverpool.com" alt="Chelsea" target="_blank">
+                </map>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleImage(imageId) {
+            const expandedImages = document.querySelectorAll('.expanded-image-container');
+            expandedImages.forEach(img => img.classList.remove('active'));
+            
+            const targetImage = document.getElementById(imageId);
+            targetImage.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
