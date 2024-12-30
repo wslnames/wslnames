@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .clickable {
+            cursor: pointer;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="../images/casettearsenal.png" alt="Click to expand" class="clickable" onclick="toggleImage()">
+        <img src="../images/paper_test.png" usemap="#image-map" alt="Expanded view" id="expandedImage" class="hidden clickable">
+        <map name="image-map">
+            <area shape="rect" coords="50,50,100,150" href="https://www.arsenal.com" alt="Example Link" target="_blank">
+            <area shape="rect" coords="100,50,100,200" href="https://www.chelsea.com" alt="Another Example Link" target="_blank">
+        </map>
+    </div>
+
+    <script>
+        function toggleImage() {
+            const expandedImage = document.getElementById('expandedImage');
+            expandedImage.classList.toggle('hidden');
+        }
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map with Hyperlinks</title>
+</head>
+<body>
+
+</body>
+</html>
+
+</body>
+</html>

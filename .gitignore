@@ -35,3 +35,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Other files #
+######################
+./images/paper_test
+./images/paper_test.xcf
