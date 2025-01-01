@@ -21,30 +21,70 @@
             max-width: 400px;
         }
 
-    
-        
-        .expanded-image-container {
-            display: none;
-            position: absolute;
-            left: 0%;
-            top: -0%;
-            transform: translateY(40%);
-            
-            z-index: 100;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+   /* Ensure the image container is positioned relatively */
+.image-item {
+    position: relative;
+}
+
+/* Expanded image container */
+.expanded-image-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* The image inside the expanded container */
+.expanded-image-container img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    position: relative; /* Makes sure it stays in context of the container */
+    z-index: 1;
+}
+
+
+
+/* Make sure the clickable areas are above the text */
+map area {
+    position: relative;
+    z-index: 20; /* Makes the area clickable and ensures it's above the overlay text */
+    cursor: pointer; /* Ensures the cursor becomes a hand when hovering over the clickable areas */
         }
 
-        .expanded-image-container.active {
-            display: block;
-        }
+/* Make sure the overlay is hidden until activated */
+.expanded-image-container.active {
+    display: block;
+}
 
-        .expanded-image-container img {
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
+/* Dim the areas a little on hover */
+area:hover {
+    opacity: 0.7;
+}
+
+        .expanded-image-container .overlay-text {
+    position: absolute; /* Positioned relative to the container */
+    top: 14%; /* Vertical center */
+    left: 35%; /* Horizontal center */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: black; /* Text color */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    background: rgba(0, 0, 0, 0); /* Add a semi-transparent background */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Optional: Round the corners */
+    z-index: 10; /* Make sure the text is above the image */
         }
+        /* The overlay text */
+
+
 
         .image-item {
             position: relative;
@@ -107,14 +147,16 @@
         <div class="image-item">
             <img src="../images/cassetteeverton.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedeverton')">
             <div id="expandedeverton" class="expanded-image-container">
-                <img src="../images/paper_everton.jpg" usemap="#image-map2" alt="Expanded view">
+                <img src="../images/paper_everton2.jpg" usemap="#image-map2" alt="Expanded view">
+                <div class="overlay-text">KELLY GAGO</div>
                 <map name="image-map2">
-                    <img src="image1.jpg" alt="Click me" class="clickable-image" ">
-                    <area shape="rect" coords="4,35,188,60" href="https://www.youtube.com/watch?v=O5-aBH9NoJQ&t=3s&ab_channel=OneSoccerAgency" alt="Kelly Gago" target="_blank">
+    
+                    <area shape="rect" coords="4,350,188,200" href="https://www.youtube.com/watch?v=O5-aBH9NoJQ&t=3s&ab_channel=OneSoccerAgency" alt="Kelly Gago" target="_blank">
                     <area shape="rect" coords="4,75,193,80" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSejFqj2QZ3fyMllAeM_adugVQYeOn_x9Rb53zmQdgP_hD0k2zOMtdSR0GhRDhlp7wmxWqPAzaGMEy7/pubhtml?gid=1163638245&single=true" alt="Chelsea" target="_blank">
                 </map>
             </div>
         </div>
+        
 
         <div class="image-item">
             <img src="../images/cassetteleicester.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedleicester')">
@@ -136,6 +178,7 @@
                 </map>
             </div>
         </div>
+        
         
         <div class="image-item">
             <img src="../images/cassettemancity.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedmancity')">
