@@ -162,3 +162,78 @@ h2.section-title, h3 {
     top: -10px;
 }
 
+        /* The container for the image */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .clickable {
+            cursor: pointer;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Ensure the image container is positioned relatively */
+        .image-item {
+            position: relative;
+        }
+
+        /* Expanded image container */
+        .expanded-image-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        /* The image inside the expanded container */
+        .expanded-image-container img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Make sure the clickable areas are above the text */
+        map area {
+            position: relative;
+            z-index: 20;
+            cursor: pointer;
+        }
+
+        /* Make sure the overlay is hidden until activated */
+        .expanded-image-container.active {
+            display: block;
+        }
+
+        /* Dim the areas a little on hover */
+        area:hover {
+            opacity: 0.7;
+        }
+
+        .expanded-image-container .overlay-text {
+            position: absolute;
+            top: 14%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            background: rgba(0, 0, 0, 0);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }

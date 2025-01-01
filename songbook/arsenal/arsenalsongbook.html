@@ -7,12 +7,14 @@
     <style>
         /* The container for the image */
         .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: flex-start; /* Align the image to the top */
+    min-height: 100vh; /* Ensure the container takes full viewport height */
+    margin: 0; /* Reset default margins */
+    padding-top: 20px; /* Optional: Add padding for spacing from the top */
+}
+
 
         .clickable {
             cursor: pointer;
@@ -29,16 +31,18 @@
 
         /* Expanded image container */
         .expanded-image-container {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+         display: none;
+        position: absolute;
+         top: 100%; /* Place it just below the clickable image */
+         left: -15px;
+          width: 100%;
+          z-index: 1;
+          background: white;
+           padding: 1rem;
+           box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
+
+
 
         /* The image inside the expanded container */
         .expanded-image-container img {
@@ -95,8 +99,16 @@
                 <!-- Image map with clickable area -->
                 <map name="image-map1">
                     <!-- Define clickable areas on the image -->
-                    <area shape="rect" coords="4,295,266,315" href="#" alt="Caitlin Foord" target="_blank" onclick="playSound('soundfoord', event)">
-                    <area shape="rect" coords="4,256,266,277" href="#" alt="Caldentey" target="_blank" onclick="playSound('soundcaldentey', event)">
+                   
+                    <area shape="rect" coords="4,61,266,82" href="#" alt="Manu" target="_blank" onclick="playSound('soundmanu', event)">
+                    <area shape="rect" coords="4,100,266,121" href="#" alt="Fox" target="_blank" onclick="playSound('soundfox', event)">
+                    <area shape="rect" coords="4,139,266,160" href="#" alt="Lotte" target="_blank" onclick="playSound('soundlotte', event)">
+                    <area shape="rect" coords="4,178,266,199" href="#" alt="Codina" target="_blank" onclick="playSound('soundcodina', event)">
+                    <area shape="rect" coords="4,217,266,238" href="#" alt="Williamson" target="_blank" onclick="playSound('soundwilliamson', event)">
+                    <area shape="rect" coords="4,256,266,277" href="#" alt="Catley" target="_blank" onclick="playSound('soundcatley', event)">             
+                    <area shape="rect" coords="4,295,266,315" href="#" alt="Caldentey" target="_blank" onclick="playSound('soundcaldentey', event)">
+                    <area shape="rect" coords="4,333,266,354" href="#" alt="Little" target="_blank" onclick="playSound('soundlittle', event)">
+                    <area shape="rect" coords="4,362,266,381" href="#" alt="Caitlin Foord" target="_blank" onclick="playSound('soundfoord', event)">
                 </map>
             </div>
         </div>
@@ -161,5 +173,16 @@
     <!-- Audio Elements -->
     <audio id="soundfoord" src="../../sounds/caitlinfoordchant.mp3"></audio>
     <audio id="soundcaldentey" src="../../sounds/caldenteychant.mp3"></audio>
+    <audio id="soundlittle" src="../../sounds/littlechant.mp3"></audio>
+    <audio id="soundwilliamson" src="../../sounds/williamsonhant.mp3"></audio>
+    <audio id="soundfox" src="../../sounds/foxchant.mp3"></audio>
+    <audio id="soundcatley" src="../../sounds/catleychant.mp3"></audio>
+    <audio id="soundfoord2" src="../../sounds/caitlinfoord2chant.mp3"></audio>
+    <audio id="soundmccabe" src="../../sounds/mccabechant.mp3"></audio>
+    <audio id="soundlotte" src="../../sounds/lottechant.mp3"></audio>
+    <audio id="soundmau" src="../../sounds/manuchant.mp3"></audio>
+    <audio id="soundmead" src="../../sounds/meadchant.mp3"></audio>
+    <audio id="soundrusso" src="../../sounds/russochant.mp3"></audio>
+
 </body>
 </html>
