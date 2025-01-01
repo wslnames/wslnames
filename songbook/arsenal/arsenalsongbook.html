@@ -8,9 +8,9 @@
         /* The container for the image */
         .image-container {
             display: flex;
-            justify-content: center; /* Center the content horizontally */
-            align-items: center; /* Center the content vertically */
-            min-height: 100vh; /* Make sure the container takes full viewport height */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
         }
 
@@ -19,7 +19,7 @@
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 400px; /* Set a maximum width for the image */
+            max-width: 400px;
         }
 
         /* Ensure the image container is positioned relatively */
@@ -45,15 +45,15 @@
             width: 100%;
             max-width: 1000px;
             height: auto;
-            position: relative; /* Makes sure it stays in context of the container */
+            position: relative;
             z-index: 1;
         }
 
         /* Make sure the clickable areas are above the text */
         map area {
             position: relative;
-            z-index: 20; /* Makes the area clickable and ensures it's above the overlay text */
-            cursor: pointer; /* Ensures the cursor becomes a hand when hovering over the clickable areas */
+            z-index: 20;
+            cursor: pointer;
         }
 
         /* Make sure the overlay is hidden until activated */
@@ -67,18 +67,18 @@
         }
 
         .expanded-image-container .overlay-text {
-            position: absolute; /* Positioned relative to the container */
-            top: 14%; /* Vertical center */
-            left: 35%; /* Horizontal center */
-            transform: translate(-50%, -50%); /* Center the text */
-            color: black; /* Text color */
-            font-size: 18px; /* Adjust font size */
-            font-weight: bold; /* Make text bold */
-            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
-            background: rgba(0, 0, 0, 0); /* Add a semi-transparent background */
-            padding: 10px; /* Add some padding */
-            border-radius: 5px; /* Optional: Round the corners */
-            z-index: 10; /* Make sure the text is above the image */
+            position: absolute;
+            top: 14%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            background: rgba(0, 0, 0, 0);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
         }
     </style>
 </head>
@@ -86,15 +86,17 @@
     <div class="image-container">
         <div class="image-item">
             <!-- Image that can be clicked to expand -->
-            <img src="../../images/cassettearsenalsongbook.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedarsenal', event)">
+            <img src="../../images/cassettearsenalsongbook.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedarsenal', event)" usemap="#image-map1">
             
             <!-- Expanded image container -->
             <div id="expandedarsenal" class="expanded-image-container">
                 <img src="../../images/paper_arsenal.jpg" usemap="#image-map1" alt="Expanded view">
+                
                 <!-- Image map with clickable area -->
                 <map name="image-map1">
-                    <!-- Play sound only when this area is clicked -->
-                    <area shape="rect" coords="4,295,266,315" href="" alt="Caitlin Foord" target="_blank" onclick="playSound('sound1', event)">
+                    <!-- Define clickable areas on the image -->
+                    <area shape="rect" coords="4,295,266,315" href="#" alt="Caitlin Foord" target="_blank" onclick="playSound('soundfoord', event)">
+                    <area shape="rect" coords="4,256,266,277" href="#" alt="Caldentey" target="_blank" onclick="playSound('soundcaldentey', event)">
                 </map>
             </div>
         </div>
@@ -103,7 +105,7 @@
     <script>
         // This function handles the toggling of the expanded image
         function toggleImage(imageId, event) {
-            event.stopPropagation(); // Prevent event propagation
+            event.stopPropagation();
             
             const expandedImages = document.querySelectorAll('.expanded-image-container');
             expandedImages.forEach(img => img.classList.remove('active'));
@@ -118,11 +120,14 @@
         // This function plays the sound when the area is clicked
         function playSound(soundId, event) {
             event.preventDefault();
-            event.stopPropagation(); // Prevent the default behavior of the area tag
+            event.stopPropagation();
+
+            // Stop any currently playing audio
+            stopSound();
 
             const audio = document.getElementById(soundId);
             if (audio) {
-                audio.currentTime = 0; // Restart the audio if it's already playing
+                audio.currentTime = 0;
                 audio.play();
             } else {
                 console.error(`Audio element with id "${soundId}" not found.`);
@@ -131,19 +136,19 @@
 
         // This function stops the sound
         function stopSound() {
-            const audio = document.getElementById('sound1');
-            if (audio) {
-                audio.pause(); // Pause the sound
-                audio.currentTime = 0; // Reset the sound to the beginning
-            }
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
         }
 
         // Close the expanded image and stop sound when clicking outside of it
         window.addEventListener('click', function(event) {
             const expandedImage = document.querySelector('.expanded-image-container.active');
             if (expandedImage && !expandedImage.contains(event.target)) {
-                expandedImage.classList.remove('active'); // Close the expanded image
-                stopSound(); // Stop the sound
+                expandedImage.classList.remove('active');
+                stopSound();
             }
         });
 
@@ -154,6 +159,7 @@
     </script>
 
     <!-- Audio Elements -->
-    <audio id="sound1" src="../../sounds/caitlinfoordchant.mp3"></audio>
+    <audio id="soundfoord" src="../../sounds/caitlinfoordchant.mp3"></audio>
+    <audio id="soundcaldentey" src="../../sounds/caldenteychant.mp3"></audio>
 </body>
 </html>
