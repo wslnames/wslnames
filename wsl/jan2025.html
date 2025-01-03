@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Map with Hyperlinks</title>
+    <title>January 2025 WSL Transfers</title>
     <style>
         .image-container {
             display: grid;
@@ -21,6 +21,20 @@
             max-width: 400px;
         }
 
+       /* Style the audio button inside the expanded container */
+       .audio-btn1 {
+            position: absolute;
+            top: 14%; /* Move it up by reducing the percentage */
+            right: 10%; /* Center horizontally */
+            transform: translate(-80%, -50%);
+            z-index: 20000; /* Ensure it's above other elements */
+            
+        }
+
+/* Show the button only when the container is active */
+.expanded-image-container.active .audio-btn {
+    display: block;
+}
 
    /* Ensure the image container is positioned relatively */
 .image-item {
@@ -147,13 +161,12 @@ area:hover {
         <div class="image-item">
             <img src="../images/cassetteeverton.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedeverton')">
             <div id="expandedeverton" class="expanded-image-container">
-                <img src="../images/paper_everton2.jpg" usemap="#image-map2" alt="Expanded view">
-                <div class="overlay-text">KELLY GAGO</div>
-                <map name="image-map2">
-    
-                    <area shape="rect" coords="4,350,188,200" href="https://www.youtube.com/watch?v=O5-aBH9NoJQ&t=3s&ab_channel=OneSoccerAgency" alt="Kelly Gago" target="_blank">
-                   
-                </map>
+                <img src="../images/paper_everton.jpg" usemap="#image-map2" alt="Expanded view">
+                <div id="react-button-root"></div>
+                <button class="audio-btn1" onclick="toggleAudio('soundgago')">
+                    <i class="play-icon">▶</i>
+                </button>
+               
             </div>
         </div>
         
@@ -179,17 +192,23 @@ area:hover {
             </div>
         </div>
         
-        
+
         <div class="image-item">
             <img src="../images/cassettemancity.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedmancity')">
             <div id="expandedmancity" class="expanded-image-container">
-                <img src="../images/paper_mancity.jpg" usemap="#image-map2" alt="Expanded view">
-                <map name="image-map2">
-                    <area shape="rect" coords="4,35,188,60" href="#" alt="Rebecca Knaak" target="_blank" onclick="playSound('soundknaak', event)">
-                   
+                <img src="../images/paper_mancity.jpg" usemap="#image-mapmancity" alt="Expanded view">
+                <div id="react-button-root"></div>
+                <button class="audio-btn1" onclick="toggleAudio('soundknaak')">
+                    <i class="play-icon">▶</i>
+                </button>
+                <map name="image-mapmancity">
+                    <area shape="rect" coords="4,150,250,80" alt="Rebecca Knaak" target="_blank" onclick="playSound('soundknaak', event);event.preventDefault();">
                 </map>
             </div>
         </div>
+            
+           
+        
         <div class="image-item">
             <img src="../images/cassettemanunited.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedmanunited')">
             <div id="expandedmanunited" class="expanded-image-container">
@@ -204,7 +223,7 @@ area:hover {
         <div class="image-item">
             <img src="../images/cassettespurs.png" alt="Click to expand" class="clickable" onclick="toggleImage('expandedspurs')">
             <div id="expandedspurs" class="expanded-image-container">
-                <img src="../images/paper_test2.jpg" usemap="#image-map4" alt="Expanded view">
+                <img src="../images/paper_spurs.jpg" usemap="#image-map4" alt="Expanded view">
                 <map name="image-map4">
                     <area shape="rect" coords="4,35,188,60" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSejFqj2QZ3fyMllAeM_adugVQYeOn_x9Rb53zmQdgP_hD0k2zOMtdSR0GhRDhlp7wmxWqPAzaGMEy7/pubhtml?gid=1163638245&single=true" alt="Spurs" target="_blank">
                   
@@ -222,6 +241,7 @@ area:hover {
             </div>
         </div>
     </div>
+   
 
     <script>
         function toggleImage(imageId) {
@@ -246,6 +266,53 @@ area:hover {
                 console.error(`Audio element with id "${soundId}" not found.`);
             }
         }
+
+    // script.js
+    let isPlaying = false;
+let currentAudio = null;
+
+function toggleAudio(soundId) {
+    const audio = document.getElementById(soundId);
+    const btn = event.currentTarget;
+    const icon = btn.querySelector('i');
+    
+    if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    
+    if (!isPlaying) {
+        audio.play();
+        icon.textContent = '■';
+        isPlaying = true;
+        currentAudio = audio;
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        icon.textContent = '▶';
+        isPlaying = false;
+        currentAudio = null;
+    }
+
+    audio.onended = function() {
+        icon.textContent = '▶';
+        isPlaying = false;
+        currentAudio = null;
+    };
+}
+
+function toggleImage(imageId) {
+    const expandedImages = document.querySelectorAll('.expanded-image-container');
+    expandedImages.forEach(img => {
+        img.classList.remove('active');
+    });
+
+    const targetImage = document.getElementById(imageId);
+    if (targetImage) {
+        targetImage.classList.toggle('active');
+    }
+}
+
     </script>
 </body>
 </html>
