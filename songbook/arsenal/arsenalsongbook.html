@@ -41,6 +41,11 @@
            padding: 1rem;
            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
+.clickable {
+    width: 100%;
+    max-width: 400px; /* Original width of the image */
+    height: auto;
+}
 
 /* Lyrics panel container */
 .lyrics-panel {
@@ -187,7 +192,7 @@
                     <area shape="rect" coords="4,256,266,277" href="#" alt="Catley" target="_blank" onclick="playSound('soundcatley', event)">             
                     <area shape="rect" coords="4,295,266,315" href="#" alt="Caldentey" target="_blank" onclick="playSound('soundcaldentey', event); showLyrics('song1');">
                     <area shape="rect" coords="4,333,266,354" href="#" alt="Little" target="_blank" onclick="playSound('soundlittle', event)">
-                    <area shape="rect" coords="4,362,266,381" href="#" alt="Caitlin Foord" target="_blank" onclick="playSound('soundfoord', event)">
+                    <area shape="rect" coords="4,362,266,381" data-original-coords="4,362,266,381" href="#" alt="Caitlin Foord" target="_blank" onclick="playSound('soundfoord', event)">
                 </map>
             </div>
         </div>
@@ -339,8 +344,41 @@ function closeLyricsPanel() {
     const lyricsPanel = document.getElementById('lyrics-panel');
     lyricsPanel.style.display = 'none';
 }
+function scaleImageMap() {
+    const img = document.querySelector('img[usemap]');
+    const mapName = img.useMap.substring(1);
+    const map = document.querySelector(`map[name="${mapName}"]`);
+    const areas = map.querySelectorAll('area');
 
-    </script>
+    // Get the original width of the image
+    const originalWidth = img.naturalWidth; // Use the intrinsic width of the image
+
+    if (originalWidth > 0) {
+        // Calculate the scaling factor
+        const scaleFactor = img.clientWidth / originalWidth;
+
+        // Update the coordinates of each area
+        areas.forEach(area => {
+            const originalCoords = area.dataset.originalCoords.split(',').map(Number);
+            const scaledCoords = originalCoords.map(coord => Math.round(coord * scaleFactor));
+            area.coords = scaledCoords.join(',');
+        });
+    }
+}
+
+
+
+    // Initialize scaling on window load and resize
+    window.addEventListener('load', scaleImageMap);
+    window.addEventListener('resize', scaleImageMap);
+    console.log("Scaling image map...");
+console.log("Image naturalWidth:", img.naturalWidth);
+console.log("Image clientWidth:", img.clientWidth);
+
+</script>
+
+
+
 
     <!-- Audio Elements -->
     <audio id="soundfoord" src="../../sounds/caitlinfoordchant.mp3"></audio>

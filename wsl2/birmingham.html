@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JW1YE75XH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0JW1YE75XH');
+    </script>
+
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birmingham City - Championship</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/wslnames_logo.png" type="image/png">
+
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Add your custom script for hamburger menu -->
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("menu-dropdown");
+        menu.classList.toggle("show");
+      }
+    </script>
+    
+    <!-- Additional styles to fix the banner and iframe issues -->
+    <style>
+      .banner {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      
+      .responsive-iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+      }
+    </style>
+</head>
+<body>
+    <!-- Translucent Panel for Hamburger Menu (Behind the Menu Icon) -->
+    <div class="hamburger-panel"></div>
+
+    <!-- Hamburger Menu Icon (Positioned Left) -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div id="menu-dropdown" class="dropdown-menu">
+        <ul>
+            <li><a href="https://wslnames.github.io/wslnames/index.html">Home</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/wsl">WSL</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/uwcl">UWCL</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/internationalteams">International Teams</a></li>
+            <li><a href="https://wslnames.github.io/wslnames/olympics2024">Olympics 2024</a></li>
+        </ul>
+    </div>
+
+    <!-- Banner Section -->
+    <header>
+        <img src="../images/birmingham_header.png" alt="St Andrews" class="banner">
+    </header>
+
+    <!-- Title Section -->
+    <h1 class="title">Birmingham City</h1>
+
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <a href="#pronunciation-guide">
+            <button class="section-button">Pronunciation Guide</button>
+        </a>
+        <a href="#team-guide">
+            <button class="section-button">Team Guide</button>
+        </a>
+    </div>
+
+    <!-- Pronunciation Guide Section -->
+    <section id="pronunciation-guide">
+        <h2 class="section-title">Pronunciation Guide</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSkFsyTWOGEA7g2wYw0MkW2yNPy3-qD6snZMb8LijetxxULE-lk4mzaEbXJaQtE62VmRWm1xq1bnh59/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" class="responsive-iframe"></iframe>
+    </section>
+
+    <!-- Team Guide Section -->
+    <section id="team-guide">
+        <h2 class="section-title">Team Guide</h2>
+        <hr class="divider">
+        <h3>Basic Info</h3>
+        <ul class="team-info">
+            <li><strong>Founded:</strong> 1968</li>
+            <li><strong>Nickname:</strong> The Blues</li>
+            <li><strong>Stadium:</strong> St Andrew's</li>
+            <li><strong>Captain:</strong> Christie Harrison-Murray</li>
+            <li><strong>Head Coach:</strong> Amy Merricks</li>
+        </ul>
+        <h3>Trophies</h3>
+        <ul class="trophies">
+            <li><strong>FA Cup:</strong> 1</li>
+        </ul>
+    </section>
+</body>
+</html>
