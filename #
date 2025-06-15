@@ -1,0 +1,12 @@
+# PostgreSQL Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=ticketdb
+DB_USER=your_username
+DB_PASSWORD=
+
+# Jira Configuration
+JIRA_SERVER=https://your-jira-instance.atlassian.net
+JIRA_USER=your_email@example.com
+JIRA_API_TOKEN=your_jira_api_token
+JIRA_PROJECT=YOUR_PROJECT_KEY
