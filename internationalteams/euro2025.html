@@ -18,10 +18,123 @@
     <link rel="icon" href="../images/wslnames_logo.png" type="image/png">
 
     <!-- Google Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../styles.css">
+
+    <!-- Custom Football-themed Styles -->
+    <style>
+        .group-container {
+            background: linear-gradient(145deg, #1a5d1a, #2d8f2d);
+            border: 3px solid #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .group-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ffff00, #ffffff, #ffff00, #ffffff);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .host-container {
+            background: linear-gradient(145deg, #8B0000, #DC143C);
+            border: 3px solid #FFD700;
+        }
+
+        .host-container::before {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700, #FFA500);
+        }
+
+        .group-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .host-title {
+            color: #FFD700;
+            background: rgba(0,0,0,0.4);
+            border: 2px solid #FFD700;
+        }
+
+        .group-flags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flag-button {
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 8px;
+            padding: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .flag-button:hover {
+            transform: translateY(-2px);
+            border-color: #FFD700;
+            box-shadow: 0 6px 12px rgba(255,215,0,0.5);
+        }
+
+        .flag-logo {
+            width: 90px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+            border: 1px solid #cccccc;
+        }
+
+        .logos {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.1"/></svg>') repeat;
+        }
+
+        .pitch-lines {
+            position: relative;
+        }
+
+        .pitch-lines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            z-index: 0;
+        }
+    </style>
 
     <!-- Custom script for hamburger menu -->
     <script>
@@ -62,76 +175,83 @@
     <h1 class="title">Euro 2025</h1>
 
     <!-- Logos Section -->
-    <section class="logos">
-        <div class="logo-container">
-            <!-- Switzerland (Host) -->
-            <a href="https://wslnames.github.io/wslnames/internationalteams/switzerland.html">
-                <img src="../images/switzerland.png" alt="Switzerland Flag" class="logo flag-logo">
-            </a>
+    <section class="logos pitch-lines">
 
-            <!-- Group A -->
-            <a href="https://wslnames.github.io/wslnames/internationalteams/norway.html">
-                <img src="../images/norway.png" alt="Norway Flag" class="logo flag-logo">
-            </a>
 
-            <a href="https://wslnames.github.io/wslnames/internationalteams/iceland.html">
-                <img src="../images/iceland.png" alt="Iceland Flag" class="logo flag-logo">
-            </a>
+        <!-- Group A -->
+        <div class="group-container">
+            <h2 class="group-title">GROUP A</h2>
+            <div class="group-flags">
+                <a href="https://wslnames.github.io/wslnames/internationalteams/switzerland.html" class="flag-button">
+                    <img src="../images/switzerland.png" alt="Switzerland Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/norway.html" class="flag-button">
+                    <img src="../images/norway.png" alt="Norway Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/iceland.html" class="flag-button">
+                    <img src="../images/iceland.png" alt="Iceland Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/finland.html" class="flag-button">
+                    <img src="../images/finland.png" alt="Finland Flag" class="flag-logo">
+                </a>
+            </div>
+        </div>
 
-            <a href="https://wslnames.github.io/wslnames/internationalteams/finland.html">
-                <img src="../images/finland.png" alt="Finland Flag" class="logo flag-logo">
-            </a>
+        <!-- Group B -->
+        <div class="group-container">
+            <h2 class="group-title">GROUP B</h2>
+            <div class="group-flags">
+                <a href="https://wslnames.github.io/wslnames/internationalteams/spain.html" class="flag-button">
+                    <img src="../images/spain.png" alt="Spain Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/portugal.html" class="flag-button">
+                    <img src="../images/portugal.png" alt="Portugal Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/belgium.html" class="flag-button">
+                    <img src="../images/belgium.png" alt="Belgium Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/italy.html" class="flag-button">
+                    <img src="../images/italy.png" alt="Italy Flag" class="flag-logo">
+                </a>
+            </div>
+        </div>
 
-            <!-- Group B -->
-            <a href="https://wslnames.github.io/wslnames/internationalteams/spain.html">
-                <img src="../images/spain.png" alt="Spain Flag" class="logo flag-logo">
-            </a>
+        <!-- Group C -->
+        <div class="group-container">
+            <h2 class="group-title">GROUP C</h2>
+            <div class="group-flags">
+                <a href="https://wslnames.github.io/wslnames/internationalteams/germany.html" class="flag-button">
+                    <img src="../images/germany.png" alt="Germany Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/poland.html" class="flag-button">
+                    <img src="../images/poland.png" alt="Poland Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/denmark.html" class="flag-button">
+                    <img src="../images/denmark.png" alt="Denmark Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/sweden.html" class="flag-button">
+                    <img src="../images/sweden.png" alt="Sweden Flag" class="flag-logo">
+                </a>
+            </div>
+        </div>
 
-            <a href="https://wslnames.github.io/wslnames/internationalteams/portugal.html">
-                <img src="../images/portugal.png" alt="Portugal Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/belgium.html">
-                <img src="../images/belgium.png" alt="Belgium Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/italy.html">
-                <img src="../images/italy.png" alt="Italy Flag" class="logo flag-logo">
-            </a>
-
-            <!-- Group C -->
-            <a href="https://wslnames.github.io/wslnames/internationalteams/germany.html">
-                <img src="../images/germany.png" alt="Germany Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/poland.html">
-                <img src="../images/poland.png" alt="Poland Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/denmark.html">
-                <img src="../images/denmark.png" alt="Denmark Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/sweden.html">
-                <img src="../images/sweden.png" alt="Sweden Flag" class="logo flag-logo">
-            </a>
-
-            <!-- Group D -->
-            <a href="https://wslnames.github.io/wslnames/internationalteams/france.html">
-                <img src="../images/france.png" alt="France Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/england.html">
-                <img src="../images/england.png" alt="England Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/wales.html">
-                <img src="../images/wales.png" alt="Wales Flag" class="logo flag-logo">
-            </a>
-
-            <a href="https://wslnames.github.io/wslnames/internationalteams/thenetherlands.html">
-                <img src="../images/netherlands.png" alt="Netherlands Flag" class="logo flag-logo">
-            </a>
+        <!-- Group D -->
+        <div class="group-container">
+            <h2 class="group-title">GROUP D</h2>
+            <div class="group-flags">
+                <a href="https://wslnames.github.io/wslnames/internationalteams/france.html" class="flag-button">
+                    <img src="../images/france.png" alt="France Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/england.html" class="flag-button">
+                    <img src="../images/england.png" alt="England Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/wales.html" class="flag-button">
+                    <img src="../images/wales.png" alt="Wales Flag" class="flag-logo">
+                </a>
+                <a href="https://wslnames.github.io/wslnames/internationalteams/thenetherlands.html" class="flag-button">
+                    <img src="../images/netherlands.png" alt="Netherlands Flag" class="flag-logo">
+                </a>
+            </div>
         </div>
     </section>
 </body>
